@@ -1,0 +1,35 @@
+<ActionBar title="NativeScript with Flutter"> </ActionBar>
+
+<GridLayout rows="auto,*">
+  <GridLayout rows="auto,240" columns="">
+    <GridLayout columns="*" class="px-6 py-2 mt-4">
+      <MenuButton
+        text="Choose a Flutter Hero..."
+        [options]="flutterHeros.heros"
+        (selected)="addName($event)"
+        class="mds text-white text-lg"
+      ></MenuButton>
+    </GridLayout>
+    <StackLayout row="1">
+      @for (hero of flutterHeros.addedNames; track i; let i = $index) {
+      <GridLayout rows="auto" columns="*,auto" (tap)="removeName(i)" class="px-8 py-2">
+        <Label [text]="hero.name" class="text-gray-300 text-sm"></Label>
+        <Label col="1" class="mds text-gray-300 text-sm">remove</Label>
+      </GridLayout>
+      }
+      @if (flutterHeros.addedNames.length === flutterHeros.heros.length) {
+        <GridLayout rows="auto" columns="*,auto" class="rounded-full bg-blue-500 p-4 mt-2 mx-8" (tap)="viewRolodex()">
+            <Label text="View Rolodex" class=" text-white"></Label>
+            <Label col="1" class="mds text-lg text-white">playing_cards</Label>
+        </GridLayout>
+      }
+    </StackLayout>
+  </GridLayout>
+  <Flutter
+    id="actionMenu"
+    row="1"
+    class="align-bottom w-full h-full"
+    [channel]="flutterChannel"
+    (loaded)="loadedFlutter($event)"
+  ></Flutter>
+</GridLayout>

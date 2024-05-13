@@ -1,0 +1,28 @@
+name: flutter_views
+description: "Flutter views for our NativeScript app."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  figma_squircle: ^0.5.3
+  equatable: ^2.0.3
+  collection: ^1.18.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  module:
+    androidX: true
+    androidPackage: org.nativescript.NativeScriptFlutterExample.flutter_views
+    iosBundleIdentifier: org.nativescript.NativeScriptFlutterExample.flutterViews

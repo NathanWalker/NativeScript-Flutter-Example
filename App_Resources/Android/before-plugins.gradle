@@ -12,4 +12,7 @@ project.ext {
 
   // useKotlin = true
   // kotlinVersion = "1.6.0"
+
+  // for inappbrowser
+  androidXBrowser = "1.4.+"
 }

@@ -1,6 +1,40 @@
-@import '@nativescript/theme/css/core.css';
-@import '@nativescript/theme/css/default.css';
+/* Resets */
+* {
+  @apply font-normal;
+  horizontal-alignment: "left";
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
 
-Button.-primary {
-  font-size: 18;
+Label {
+  @apply align-middle;
+}
+
+Button {
+  @apply rounded-none border-0 bg-transparent normal-case;
+  min-width: 0;
+  min-height: 0;
+  android-elevation: 0;
+  android-dynamic-elevation-offset: 0;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ActionBar,
+Page {
+  background-color: black;
+  color: white;
+}
+
+.mds {
+  font-family: "Material Symbols Outlined", "MaterialSymbolsOutlined";
+  font-weight: 400;
 }
